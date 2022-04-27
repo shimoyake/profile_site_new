@@ -1,0 +1,348 @@
+.main_h {
+  position: fixed;
+  top: 0px;
+  max-height: 70px;
+  z-index: 999;
+  width: 100%;
+  padding-top: 17px;
+  background: none;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+  top: -100px;
+  padding-bottom: 6px;
+  font-family: "Montserrat", sans-serif;
+}
+@media only screen and (max-width: 766px) {
+  .main_h {
+    padding-top: 25px;
+  }
+}
+
+.sticky {
+  background-color: rgba(255, 255, 255, 0.93);
+  opacity: 1;
+  top: 0px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.logo {
+  width: 50px;
+  font-size: 25px;
+  color: #8f8f8f;
+  text-transform: uppercase;
+  float: left;
+  display: block;
+  margin-top: 0;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 766px) {
+  .logo {
+    float: none;
+  }
+}
+
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 22px;
+  top: 0;
+  width: 30px;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+@media only screen and (max-width: 766px) {
+  .mobile-toggle {
+    display: block;
+  }
+}
+.mobile-toggle span {
+  width: 30px;
+  height: 4px;
+  margin-bottom: 6px;
+  border-radius: 1000px;
+  background: #8f8f8f;
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.8;
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 17px;
+  line-height: 2;
+}
+
+.hero {
+  position: relative;
+  background: url(https://www.pakutaso.com/shared/img/thumb/nekocatPAR591042433_TP_V.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  padding-top: 110px;
+  min-height: 500px;
+  letter-spacing: 2px;
+  font-family: "Montserrat", sans-serif;
+}
+.hero h1 {
+  font-size: 50px;
+  line-height: 1.3;
+}
+.hero h1 span {
+  font-size: 25px;
+  color: #e8f380;
+  border-bottom: 2px solid #e8f380;
+  padding-bottom: 12px;
+  line-height: 3;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+
+/*AboutMe部分の表示切り替え*/
+    /*全体*/
+    .hidden_box {
+      margin: 2em 0;
+      padding: 0;
+    }
+
+    /*ボタン装飾*/
+    .hidden_box label {
+      padding: 15px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor :pointer;
+      transition: .5s;
+    }
+
+    /*アイコンを表示*/
+    .hidden_box label:before {
+      display: inline-block;
+      content: '\f078';
+      font-family: 'FontAwesome';
+      padding-right: 5px;
+      transition: 0.2s;
+    }
+
+    /*ボタンホバー時*/
+    .hidden_box label:hover {
+      background: silver;
+    }
+
+    /*アイコンを切り替え*/
+    .hidden_box input:checked + label:before {
+      content: '\f00d';
+      -ms-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+      color: #668ad8;
+    }
+
+    /*チェックは見えなくする*/
+    .hidden_box input {
+      display: none;
+    }
+
+    /*中身を非表示にしておく*/
+    .hidden_box .hidden_show {
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: 0.8s;
+    }
+
+    /*クリックで中身表示*/
+    .hidden_box input:checked + label + .hidden_show {
+      padding: 10px 0;
+      height: auto;
+      opacity: 1;
+    }
+
+/*モーダル*/
+    .modal-wrapper {
+      z-index: 999;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 60px 10px;
+      text-align: center
+    }
+
+    .modal-wrapper:not(:target) {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s, visibility .3s;
+    }
+
+    .modal-wrapper:target {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .4s, visibility .4s;
+    }
+
+    .modal-wrapper::after {
+      display: inline-block;
+      height: 100%;
+      margin-left: -.05em;
+      vertical-align: middle;
+      content: ""
+    }
+
+    .modal-wrapper .modal-window {
+      box-sizing: border-box;
+      display: inline-block;
+      z-index: 20;
+      position: relative;
+      width: 100%;
+      height: 90%;
+      max-width: 1000px;
+      padding: 30px 30px 15px;
+      border-radius: 2px;
+      background: #efefef;
+      box-shadow: 0 0 30px rgba(0, 0, 0, .6);
+      vertical-align: middle
+    }
+
+
+    .modal-overlay {
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .8)
+    }
+
+    .modal-wrapper .modal-close {
+      z-index: 20;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 35px;
+      color: #95979c !important;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 35px;
+      text-align: center;
+      text-decoration: none;
+      text-indent: 0
+    }
+
+
+/*強みとビジョン　見出しデザイン*/
+    .caption {
+      position: relative;
+      display: inline-block;
+      height: 64px;
+      min-width: 150px;
+      margin-left: 30px;
+      padding: 1rem 2rem 1rem 3rem;
+      color: #fff;
+      background: #fbd366;
+    }
+
+    .caption:before {
+      position: absolute;
+      top: 0;
+      left: -30px;
+      content: '';
+      border-width: 32px 30px 32px 0;
+      border-style: solid;
+      border-color: transparent #fbd366 transparent transparent;
+    }
+
+    .caption:after {
+      position: absolute;
+      top: calc(50% - 7px);
+      left: -10px;
+      width: 14px;
+      height: 14px;
+      content: '';
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .container_inner{
+      display: flex;
+    }
+    .container_text{
+      display: block;
+      margin-left: 5%;
+    }
+
+    .group{
+      text-align: center;
+    }
+
+/*作品詳細ページ*/
+    .works_section{
+      display: flex;
+    }
+
+    .works_section img{
+      margin-bottom: 5%;
+    }
+
+    .works_line{
+      padding: 1rem 2rem;
+      border-top: 3px dotted #000;
+    }
+
+    @media only screen and (max-width: 766px) {
+      .works_section {
+        display: block;
+      }
+      .works_section img{
+        width: 100%;
+      }
+    }
